@@ -1,0 +1,41 @@
+
+/* Styling for the table container */
+.table-container {
+    margin: 10px;
+    /* margin-top: 60px; */
+  }
+  /* Styling for table */
+  table {
+    padding: 3px;
+    border: 1px solid #eee;
+    width: 100%;
+  }
+  /* Styling for table rows and cells */
+  tr,
+  th,
+  td {
+    padding: 3px;
+    border: 1px solid #eee;
+  }
+  /* Styling for buttons */
+  button {
+    margin: 5px;
+    align-self: center;
+    padding: 5px;
+    width: 20%;
+    height: 20%;
+  }
+  /* Styling for a section above the table */
+  .pretable {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Styling for table headers */
+  th {
+    background-color: #eee;
+  }
+  /* Hover effect for table cells */
+  td:hover {
+    background-color: #dcdcdc;
+  }
