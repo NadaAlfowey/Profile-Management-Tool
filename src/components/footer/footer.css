@@ -1,11 +1,14 @@
 /* Styling for the footer container */
 .footer-container {
-    border-top: 1px solid #dcdcdc;
-    background-color: #eee;
-  }
-  /* Styling for the copyright text */
-  .copyright {
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-  }
+  border-top: 1px solid #dcdcdc;
+  background-color: #eee;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* Styling for the copyright text */
+.copyright {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
