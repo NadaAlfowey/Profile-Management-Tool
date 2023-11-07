@@ -5,18 +5,24 @@ function AboutUs() {
   return (
     <div>
       <header>
-        <h1>About Us</h1>
+        <h1 className='aboutusheader'>About Us</h1>
       </header>
 
       <div className="container">
         <h2>Our Story</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur tortor id nisl sollicitudin, id hendrerit risus aliquet. Suspendisse tristique, leo eget gravida dignissim, tellus eros volutpat urna, at dictum mi quam in justo.</p>
+        <p className='aboutusparagraph'>
+          At Profile Management Tools, our journey began with a simple idea: to empower individuals to take control of their online presence. We understand the importance of privacy and the need to efficiently manage personal information in the digital age. Our story is one of continuous innovation and dedication to providing users with the tools they need to protect their digital identities.
+        </p>
 
         <h2>Our Mission</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque nemo aspernatur deserunt nisi velit repellat dicta doloremque porro. Expedita distinctio blanditiis deserunt quae nemo incidunt ut nihil ad quaerat consequatur.</p>
+        <p className='aboutusparagraph'> 
+          Our mission is to simplify the complexities of profile management and privacy control. We are committed to creating solutions that allow you to effortlessly manage your online profiles, safeguard your personal data, and navigate the digital world with confidence. We believe that everyone should have the means to curate their digital footprint, and our mission is to make that vision a reality.
+        </p>
 
         <h2>Meet the Team</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam fugiat, illo quia quam inventore sed alias ex corrupti quis illum assumenda ea, aliquam molestiae soluta obcaecati libero nam? Ullam, ipsam.</p>
+        <p className='aboutusparagraph'>
+          The Profile Management Tools team is a diverse group of passionate individuals who share a common goal: to provide you with the best profile management solutions. We bring together expertise in technology, security, and user experience to deliver innovative tools that meet your needs. Get to know the faces behind our mission and discover the talent and dedication that drives our commitment to your online security and convenience.
+        </p>
       </div>
     </div>
   )

@@ -8,7 +8,7 @@ function LandingPage() {
       <div id="image-container">
         <img className="background" src={hero} alt="Hero background" />
       </div>
-      <h1>Profile Management Tool</h1>
+      <h1 className="landingheader">Profile Management Tool</h1>
       <div className="card-list">
         <div href="#" className="card-item">
           <span className="developer"> Welcome to Your Profile Hub</span>
@@ -27,7 +27,7 @@ function LandingPage() {
           </div>
         </div>
         <div href="#" className="card-item">
-          <span className="designer">Customize and Personalize</span>
+          <span className="developer">Customize and Personalize</span>
           <h3 className="card-paragraph">
             We understand that no two profiles are alike, and that's why we've
             designed our app to be highly customizable. Tailor your profile to
@@ -43,7 +43,7 @@ function LandingPage() {
           </div>
         </div>
         <div href="#" className="card-item">
-          <span className="editor">Privacy and Security at the Core</span>
+          <span className="developer">Privacy and Security at the Core</span>
           <h3 className="card-paragraph">
             Your privacy and security are paramount to us. We employ robust
             encryption and stringent data protection measures to ensure that
