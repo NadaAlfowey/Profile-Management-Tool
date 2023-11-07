@@ -47,4 +47,9 @@
   cursor: pointer; /* Set the cursor to a pointer when hovering */
   background-color: grey;
 }
+@media only screen and (max-width: 768px) {
+  .actions{
+    width:50%;
+  }
+}
 
