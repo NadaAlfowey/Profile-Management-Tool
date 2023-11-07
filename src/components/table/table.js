@@ -8,211 +8,175 @@ function Table() {
                 <div className="table-container">
                     <div className="pretable">
                         <h1>Table Name</h1>
-                        <button>Create</button>
+                        <button className='createbutton'>Create</button>
                     </div>
                     <table>
                         <tr>
-                            <th>col1</th>
-                            <th>col2</th>
-                            <th>col3</th>
-                            <th>col4</th>
-                            <th>col5</th>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Age</th>
+                            <th>Job</th>
+                            <th>Actions</th>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
                             <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
+                            <td className='actions'>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
                         </tr>
                     </table>
                 </div>

@@ -32,3 +32,17 @@
     padding: 10px; /* Optional: Add padding to make it look visually appealing */
     border: 1px solid #ccc; /* Optional: Add a border for styling */
   }
+  /* Media query for screens with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  .form1 {
+      width: 50%; /* Adjust the width for smaller screens */
+      max-width: none; /* Remove the maximum width restriction */
+  }
+  .submit-btn{
+    width:70px;
+  }
+}
+.submit-btn:hover{
+  background-color: #eee;
+  cursor: pointer;
+}

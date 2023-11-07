@@ -25,6 +25,10 @@
     width: 20%;
     height: 20%;
   }
+  button :hover{
+   color: red;
+   cursor: pointer; /* Set the cursor to a pointer when hovering */
+  }
   /* Styling for a section above the table */
   .pretable {
     margin-top: 10px;
@@ -36,6 +40,11 @@
     background-color: #eee;
   }
   /* Hover effect for table cells */
-  td:hover {
+  tr:hover {
     background-color: #dcdcdc;
   }
+.createbutton:hover{
+  cursor: pointer; /* Set the cursor to a pointer when hovering */
+  background-color: grey;
+}
+

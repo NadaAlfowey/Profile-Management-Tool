@@ -22,9 +22,6 @@ function LandingPage() {
             new photos, share your latest achievements, and ensure that your
             online image accurately reflects who you are.
           </h3>
-          <div className="arrow">
-            <i className="fas fa-arrow-right card-icon"></i>
-          </div>
         </div>
         <div href="#" className="card-item">
           <span className="developer">Customize and Personalize</span>
@@ -38,9 +35,6 @@ function LandingPage() {
             our Profile Management Web App provides the flexibility you need to
             stand out and leave a lasting impression.
           </h3>
-          <div className="arrow">
-            <i className="fas fa-arrow-right card-icon"></i>
-          </div>
         </div>
         <div href="#" className="card-item">
           <span className="developer">Privacy and Security at the Core</span>
@@ -56,9 +50,6 @@ function LandingPage() {
             Management Web App provides a trustworthy and secure platform to
             build, maintain, and showcase your online identity.
           </h3>
-          <div className="arrow">
-            <i className="fas fa-arrow-right card-icon"></i>
-          </div>
         </div>
       </div>
     </div>
