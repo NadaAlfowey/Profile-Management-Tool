@@ -36,6 +36,9 @@
   }
   /* Media query for screens with a maximum width of 768px */
   @media only screen and (max-width: 768px) {
+    .navbar{
+      position: fixed;
+    }
     /* Initial state of navigation options (hidden) */
     .navoptions {
       opacity: 0;
