@@ -1,188 +1,89 @@
-import React from 'react'
-import './table.css'
+import React, { useEffect, useState } from "react";
+import "./table.css";
+import axios from "axios";
+import Delete from "./delete.js";
 
 function Table() {
-    return (
-        <div>
-            <div>
-                <div className="table-container">
-                    <div className="pretable">
-                        <h1>Table Name</h1>
-                        <button className='createbutton'>Create</button>
-                    </div>
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <th>ID</th>
-                            <th>Age</th>
-                            <th>Job</th>
-                            <th>Actions</th>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td>none</td>
-                            <td className='actions'>
-                            <button><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+  useEffect(() => {
+    getTableData();
+  }, []);
+
+  const [data, setData] = useState([]);
+  const [isDOpen, setIsDOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsDOpen(!isDOpen);
+  };
+
+  const getTableData = () => {
+    const apiUrl = "http://amanimagdi.pythonanywhere.com/profiles/"; // Replace with your API URL
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });  
+    };
+
+      const deleteRow = (itemId) => {
+        const apiUrl = `http://amanimagdi.pythonanywhere.com/profiles/${itemId}`;
+        axios
+          .delete(apiUrl)
+          .then(() => {
+            setData((oldData) => oldData.filter((item) => item.id !== itemId));
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        };
+
+
+  return (
+    <div>
+      <div>
+        <div className="table-container">
+          <div className="pretable">
+            <h1>Table Name</h1>
+            <button>Create</button>
+          </div>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>phone</th>
+              <th>speed</th>
+              <th>pop_name</th>
+              <th>dslam_hostname</th>
+              <th>frame</th>
+              <th>attainable_speed</th>
+              <th>Actions</th>
+            </tr>
+            {data.map((item, i) => (
+              <tr key={i}>
+                <td>{item.name}</td>
+                <td>{item.phone}</td>
+                <td>{item.speed}</td>
+                <td>{item.pop_name}</td>
+                <td>{item.dslam_hostname}</td>
+                <td>{item.frame}</td>
+                <td>{item.attainable_speed}</td>
+                <td className="actions">
+                  <button>
+                    <i className="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <button onClick={() => deleteRow(item.id)}>
+                    <i className="fa-regular fa-trash-can"></i>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </table>
+          {isDOpen?<Delete />:null}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Table
+export default Table;
