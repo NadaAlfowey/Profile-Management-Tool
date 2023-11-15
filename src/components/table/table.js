@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./table.css";
 import axios from "axios";
-import Delete from "./delete.js";
+import Delete from "./deleteDB.js";
 
 function Table() {
   useEffect(() => {
     getTableData();
   }, []);
-
+  const [popName, setPopName] = useState(null); // Use useState for popName
   const [data, setData] = useState([]);
   const [isDOpen, setIsDOpen] = useState(false);
+  const [selectedID, setselectedID] = useState(null);
 
-  const toggleMenu = () => {
-    setIsDOpen(!isDOpen);
+  const openMenu = (itemId) => {
+    setIsDOpen(true);
+    setselectedID(itemId);
   };
 
   const getTableData = () => {
@@ -24,21 +26,22 @@ function Table() {
       })
       .catch((err) => {
         console.log(err);
-      });  
-    };
+      });
+  };
 
-      const deleteRow = (itemId) => {
-        const apiUrl = `http://amanimagdi.pythonanywhere.com/profiles/${itemId}`;
-        axios
-          .delete(apiUrl)
-          .then(() => {
-            setData((oldData) => oldData.filter((item) => item.id !== itemId));
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-        };
-
+  const deleteRow = async() => {
+    const apiUrl = `http://amanimagdi.pythonanywhere.com/profiles/${selectedID}`;
+    await axios
+      .delete(apiUrl)
+      .then(() => {
+      setData((oldData) => oldData.filter((item) => item.id !== selectedID));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      setIsDOpen(false);
+  };
+  
 
   return (
     <div>
@@ -72,14 +75,21 @@ function Table() {
                   <button>
                     <i className="fa-regular fa-pen-to-square"></i>
                   </button>
-                  <button onClick={() => deleteRow(item.id)}>
+                  {/* onClick={() => deleteRow(item.id)} */}
+                  <button onClick={() => { openMenu(item.id); setPopName(item.pop_name); }}>
                     <i className="fa-regular fa-trash-can"></i>
                   </button>
                 </td>
               </tr>
             ))}
           </table>
-          {isDOpen?<Delete />:null}
+          {isDOpen ? (
+            <Delete
+            deleteRow={deleteRow}
+              closeMenu={() => setIsDOpen(false)}
+              name={popName}
+            />
+          ) : null}
         </div>
       </div>
     </div>
