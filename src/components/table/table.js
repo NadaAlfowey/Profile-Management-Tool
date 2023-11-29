@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./table.css";
 import axios from "axios";
 import Delete from "./deleteDB.js";
+import Create from "./createDB.js";
+import Update from "./editDB.js";
 
 function Table() {
   useEffect(() => {
@@ -10,10 +12,16 @@ function Table() {
   const [popName, setPopName] = useState(null); // Use useState for popName
   const [data, setData] = useState([]);
   const [isDOpen, setIsDOpen] = useState(false);
+  const [isCOpen, setIsCOpen] = useState(false);
   const [selectedID, setselectedID] = useState(null);
 
-  const openMenu = (itemId) => {
+  const openDMenu = (itemId) => {
     setIsDOpen(true);
+    setselectedID(itemId);
+  };
+
+  const openCMenu = (itemId) => {
+    setIsCOpen(true);
     setselectedID(itemId);
   };
 
@@ -41,6 +49,22 @@ function Table() {
       });
       setIsDOpen(false);
   };
+  const editRow = async (updatedData) => {
+    const apiUrl = `http://amanimagdi.pythonanywhere.com/profiles/${selectedID}/`;
+    try {
+      const response = await axios.put(apiUrl, updatedData);
+      // Assuming the server responds with the updated data, use it to update the state
+      setData((oldData) =>
+        oldData.map((item) =>
+          item.id === selectedID ? { ...item, ...response.data } : item
+        )
+      );
+      setIsCOpen(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
   
 
   return (
@@ -72,11 +96,10 @@ function Table() {
                 <td>{item.frame}</td>
                 <td>{item.attainable_speed}</td>
                 <td className="actions">
-                  <button>
+                  <button onClick={() => openCMenu(item.id)}>
                     <i className="fa-regular fa-pen-to-square"></i>
                   </button>
-                  {/* onClick={() => deleteRow(item.id)} */}
-                  <button onClick={() => { openMenu(item.id); setPopName(item.pop_name); }}>
+                  <button onClick={() => { openDMenu(item.id); setPopName(item.pop_name); }}>
                     <i className="fa-regular fa-trash-can"></i>
                   </button>
                 </td>
@@ -88,6 +111,13 @@ function Table() {
             deleteRow={deleteRow}
               closeMenu={() => setIsDOpen(false)}
               name={popName}
+            />
+          ) : null}
+          {isCOpen ? (
+            <Update
+            editRow={editRow}
+            closeMenu={() => setIsCOpen(false)}
+            selectedData={data.find((item) => item.id === selectedID)}
             />
           ) : null}
         </div>
