@@ -26,11 +26,11 @@
     background-color: gray;
     align-self: center;
   }
-  input, button {
+  .sign-input,button {
     height: 40px;
-    border-radius: 10px; /* Adjust the value to control the roundness of the corners */
-    padding: 10px; /* Optional: Add padding to make it look visually appealing */
-    border: 1px solid #ccc; /* Optional: Add a border for styling */
+    border-radius: 10px; 
+    padding: 10px;
+    border: 1px solid #ccc;
   }
   /* Media query for screens with a maximum width of 768px */
 @media only screen and (max-width: 768px) {

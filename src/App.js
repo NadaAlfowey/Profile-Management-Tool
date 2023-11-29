@@ -4,11 +4,11 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/navbar'
 import Footer from './components/footer/footer'
-import LandingPage from './components/landingPage/landingPage'
-import Table from './components/table/table'
-import AboutUs from './components/aboutUs/aboutus'
-import SignUp from './components/signup/signup'
-import Login from './components/login/login'
+import LandingPage from './pages/landingPage/landingPage'
+import Profiles from './pages/profiles/profiles'
+import AboutUs from './pages/aboutUs/aboutus'
+import SignUp from './pages/signup/signup'
+import Login from './pages/login/login'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
           <Route path="/" Component={LandingPage}/>
-          <Route path="/table" Component={Table} />
+          <Route path="/table" Component={Profiles} />
           <Route path="/AboutUs" Component={AboutUs} />
           <Route path="/logout" Component={Login} />
           <Route path="/login" Component={Login} />

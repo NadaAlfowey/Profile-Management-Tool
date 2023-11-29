@@ -1,50 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./createDB.css";
+import React from "react";
+import "./saveDB.css";
 
-function Update({ editRow, closeMenu, selectedData }) {
-
-  const [formData, setFormData] = useState({
-    id: selectedData.id,
-    name: selectedData.name,
-    phone: selectedData.phone,
-    speed: selectedData.speed,
-    pop_name: selectedData.pop_name,
-    dslam_hostname: selectedData.dslam_hostname,
-    frame: selectedData.frame,
-    attainable_speed: selectedData.attainable_speed,
-  });
-
-  useEffect(() => {
-    setFormData({
-      id: selectedData.id,
-      name: selectedData.name,
-      phone: selectedData.phone,
-      speed: selectedData.speed,
-      pop_name: selectedData.pop_name,
-      dslam_hostname: selectedData.dslam_hostname,
-      frame: selectedData.frame,
-      attainable_speed: selectedData.attainable_speed,
-    });
-  }, [selectedData]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Include the logic to handle the form submission
-    editRow(formData);
-    closeMenu();
-  };
-
+function Save({ closeDialog, dataType, onChange, onSubmit,dialogTitle,buttonTitle }) {
   return (
     <div className="big-container">
       <div className="form-container">
-        <form id="addForm">
-          <h2>Edit {formData.pop_name}</h2>
-
+        <form id="addForm" onSubmit={onSubmit}>
+          <h2>{dialogTitle}</h2>
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="name">Name:</label>
@@ -53,11 +15,10 @@ function Update({ editRow, closeMenu, selectedData }) {
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange} // Handle input changes
+                value={dataType.name}
+                onChange={onChange} // Handle input changes
               />
             </div>
-
             <div className="form-group">
               <label htmlFor="phone">Phone:</label>
               <input
@@ -65,8 +26,8 @@ function Update({ editRow, closeMenu, selectedData }) {
                 type="text"
                 id="phone"
                 name="phone"
-                value={formData.phone}
-                onChange={handleChange}
+                value={dataType.phone}
+                onChange={onChange}
               />
             </div>
           </div>
@@ -79,8 +40,8 @@ function Update({ editRow, closeMenu, selectedData }) {
                 type="text"
                 id="speed"
                 name="speed"
-                value={formData.speed}
-                onChange={handleChange}
+                value={dataType.speed}
+                onChange={onChange}
               />
             </div>
 
@@ -91,8 +52,8 @@ function Update({ editRow, closeMenu, selectedData }) {
                 type="text"
                 id="pop_name"
                 name="pop_name"
-                value={formData.pop_name}
-                onChange={handleChange}
+                value={dataType.pop_name}
+                onChange={onChange}
               />
             </div>
           </div>
@@ -105,8 +66,8 @@ function Update({ editRow, closeMenu, selectedData }) {
                 type="text"
                 id="dslam_hostname"
                 name="dslam_hostname"
-                value={formData.dslam_hostname}
-                onChange={handleChange}
+                value={dataType.dslam_hostname}
+                onChange={onChange}
               />
             </div>
           </div>
@@ -119,8 +80,8 @@ function Update({ editRow, closeMenu, selectedData }) {
                 type="text"
                 id="frame"
                 name="frame"
-                value={formData.frame}
-                onChange={handleChange}
+                value={dataType.frame}
+                onChange={onChange}
               />
             </div>
 
@@ -131,17 +92,17 @@ function Update({ editRow, closeMenu, selectedData }) {
                 type="text"
                 id="attainable_speed"
                 name="attainable_speed"
-                value={formData.attainable_speed}
-                onChange={handleChange}
+                value={dataType.attainable_speed}
+                onChange={onChange}
               />
             </div>
           </div>
           <div className="buttons">
-            <button className="cancle-btn" onClick={closeMenu}>
+            <button className="cancle-btn" onClick={closeDialog}>
               Cancle
             </button>
-            <button className="add-submit-btn" onClick={handleSubmit}>
-              Update
+            <button className="add-submit-btn" type="submit">
+              {buttonTitle}
             </button>
           </div>
         </form>
@@ -150,4 +111,4 @@ function Update({ editRow, closeMenu, selectedData }) {
   );
 }
 
-export default Update;
+export default Save;
