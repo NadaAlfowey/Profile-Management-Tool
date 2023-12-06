@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "./profiles.css";
 import axios from "axios";
-import Delete from "../../components/deleteDB/deleteDB";
-import Save from "../../components/saveDB/saveDB";
+import "./profiles.css";
+import Delete from "../../components/deleteRow/deleteRow";
+import Save from "../../components/saveRow/saveRow";
+import instance from "../../interceptors/interceptors";
 
 function Profiles() {
-  const apiUrl = `http://amanimagdi.pythonanywhere.com/profiles/`;
-  useEffect(() => {
-    getTableData();
-  }, []);
-  const [popName, setPopName] = useState(null); // Use useState for popName
+  // Initialize state variables
+  const [name, setName] = useState(null);
   const [data, setData] = useState([]);
   const [isDOpen, setIsDOpen] = useState(false);
   const [saveDialog, setSaveDialog] = useState({
@@ -28,11 +26,16 @@ function Profiles() {
   });
   // Selected Profile
   const [selectedProfile, setSelectedProfile] = useState({});
-  // Get all profiles
+
+  // Fetch data on component mount
+  useEffect(() => {
+    getTableData();
+  }, []);
+
+  // Fetch all profiles
   const getTableData = () => {
-    const apiUrl = "http://amanimagdi.pythonanywhere.com/profiles/"; // Replace with your API URL
-    axios
-      .get(apiUrl)
+    instance
+      .get("profiles/")
       .then((response) => {
         setData(response.data);
       })
@@ -40,23 +43,29 @@ function Profiles() {
         console.log(err);
       });
   };
+
+  // Open delete confirmation dialog
   const openDeleteMenu = (item) => {
     setIsDOpen(true);
     setSelectedProfile(item);
   };
+
+  // Delete a profile
   const deleteRow = () => {
-    const apiUrl = `http://amanimagdi.pythonanywhere.com/profiles/${selectedProfile.id}/`;
-    axios
-      .delete(apiUrl)
+    instance
+      .delete(`profiles/${selectedProfile.id}/`)
       .then(() => {
         setIsDOpen(false);
         getTableData();
       })
       .catch((err) => {
-        console.log(err);
+        if (err.response.status === 400) {
+          console.error("400 Error: Incorrect delete request syntax");
+        } else console.log(err);
       });
   };
-  // Open SaveDialog
+
+  // Open SaveDialog for creating or updating profiles
   const openSaveDialog = (dialogTitle, submitButtonName, item) => {
     setSaveDialog({
       dialogTitle: dialogTitle,
@@ -65,6 +74,8 @@ function Profiles() {
     });
     item && setSelectedProfile(item);
   };
+
+  // Close SaveDialog
   const handleCloseSaveDialog = () => {
     setSaveDialog({
       dialogTitle: "",
@@ -73,7 +84,8 @@ function Profiles() {
     });
     setSelectedProfile({});
   };
-  // onInputChange in The Save Dialog
+
+  // Handle input changes in the SaveDialog
   const handleInputChange = (e) => {
     saveDialog.submitButtonName === "Create"
       ? setnewProfile({
@@ -85,29 +97,36 @@ function Profiles() {
           [e.target.name]: e.target.value,
         });
   };
+
+  // Handle profile updates
   const handleProfileUpdates = (e) => {
     e.preventDefault();
-    const apiUrl = `http://amanimagdi.pythonanywhere.com/profiles/${selectedProfile.id}/`;
-    axios
-      .put(apiUrl, selectedProfile)
+    instance
+      .put(`profiles/${selectedProfile.id}/`, selectedProfile)
       .then((res) => {
         getTableData();
         handleCloseSaveDialog();
       })
       .catch((err) => {
-        console.log(err.message);
+        if (err.response.status === 400) {
+          console.error("400 Error: Incorrect Update request syntax");
+        } else console.log(err.message);
       });
   };
+
+  // Create a new profile
   const createNewProfile = (e) => {
     e.preventDefault();
-    axios
-      .post(apiUrl, newProfile)
+    instance
+      .post("profiles/", newProfile)
       .then((res) => {
         getTableData();
         handleCloseSaveDialog();
       })
       .catch((err) => {
-        console.log(err.message);
+        if (err.response.status === 400) {
+          console.error("400 Error: Incorrect create request syntax");
+        } else console.log(err.message);
       });
   };
 
@@ -117,12 +136,14 @@ function Profiles() {
         <div className="table-container">
           <div className="pretable">
             <h1>Table Name</h1>
+            {/* Button to open the SaveDialog for creating a new record */}
             <button
               onClick={() => openSaveDialog("Create New Record", "Create")}
             >
               Create
             </button>
           </div>
+          {/* Table header */}
           <table>
             <tr>
               <th>Name</th>
@@ -134,8 +155,10 @@ function Profiles() {
               <th>attainable_speed</th>
               <th>Actions</th>
             </tr>
+            {/* Map through data to render table rows */}
             {data.map((item, i) => (
               <tr key={i}>
+                {/* Display profile information in table cells */}
                 <td>{item.name}</td>
                 <td>{item.phone}</td>
                 <td>{item.speed}</td>
@@ -143,6 +166,7 @@ function Profiles() {
                 <td>{item.dslam_hostname}</td>
                 <td>{item.frame}</td>
                 <td>{item.attainable_speed}</td>
+                {/* Actions column with buttons for updating and deleting */}
                 <td className="actions">
                   <button
                     onClick={() =>
@@ -154,7 +178,7 @@ function Profiles() {
                   <button
                     onClick={() => {
                       openDeleteMenu(item);
-                      setPopName(item.pop_name);
+                      setName(item.name);
                     }}
                   >
                     <i className="fa-regular fa-trash-can"></i>
@@ -163,11 +187,12 @@ function Profiles() {
               </tr>
             ))}
           </table>
+          {/* Render the Delete and Save dialogs when needed */}
           {isDOpen ? (
             <Delete
               deleteRow={deleteRow}
               closeMenu={() => setIsDOpen(false)}
-              name={popName}
+              name={name}
             />
           ) : null}
           {saveDialog.isDialogOpen ? (
