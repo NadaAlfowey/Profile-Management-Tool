@@ -4,8 +4,8 @@ import "./footer.css";
 function Footer() {
   return (
     <div>
-      <footer class="footer-container">
-        <small class="copyright">
+      <footer className="footer-container">
+        <small className="copyright">
           &copy; {new Date().getFullYear()} VAS Team | All Rights Reserved
         </small>
       </footer>
