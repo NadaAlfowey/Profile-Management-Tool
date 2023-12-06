@@ -1,5 +1,5 @@
 import React from "react";
-import "./saveDB.css";
+import "./saveRow.css";
 
 function Save({ closeDialog, dataType, onChange, onSubmit,dialogTitle,buttonTitle }) {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import "./deleteDB.css";
+import "./deleteRow.css";
 
 function Delete({closeMenu,deleteRow,name}) {
     return (
