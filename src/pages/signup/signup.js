@@ -11,8 +11,10 @@ function SignUp() {
     confirmPassword: "",
   };
 
+  // State to manage user input data
   const [userData, setUserData] = useState(initialUserData);
 
+  // Handle user input change
   const handleUserInput = (e) => {
     setUserData({
       ...userData,
@@ -20,32 +22,39 @@ function SignUp() {
     });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     const { username, password } = userData;
     e.preventDefault();
 
-    // Check is empty
+    // Check if any input field is empty
     if (Object.values(userData).some((item) => item === "")) {
       console.log("Input data is not complete");
       return;
     }
+
+    // Check if password and confirm password match
     if (userData.confirmPassword !== userData.password) {
       alert("Confirm password doesn't match!");
       return;
     }
+
+    // Make API call to create a new user profile
     instance
-      .post("http://amanimagdi.pythonanywhere.com/users/", {
+      .post("users/", {
         username,
         password,
       })
       .then((res) => {
-        // Clear data
+        // Clear input data after successful profile creation
         setUserData(initialUserData);
         console.log("Profile created successfully");
+        // Redirect to login page
         navigate("/login");
       })
       .catch((err) => {
-      alert(`Error creating profile: ${err.message}`);
+        // Handle and display error message
+        alert(`Error creating profile: ${err.message}`);
       });
   };
 
@@ -53,15 +62,17 @@ function SignUp() {
     <div className="form-body">
       <form onSubmit={handleSubmit} className="form1">
         <h1>Signup</h1>
+        {/* Email input field */}
         <input
           className="sign-input"
-          type="email"
+          type="input"
           id="email"
           name="username"
-          placeholder="Email"
+          placeholder="Username"
           value={userData.username}
           onChange={handleUserInput}
         />
+        {/* Password input field */}
         <input
           className="sign-input"
           type="password"
@@ -71,6 +82,7 @@ function SignUp() {
           value={userData.password}
           onChange={handleUserInput}
         />
+        {/* Confirm password input field */}
         <input
           className="sign-input"
           type="password"
@@ -80,11 +92,13 @@ function SignUp() {
           value={userData.confirmPassword}
           onChange={handleUserInput}
         />
+        {/* Submit button */}
         <button type="submit" id="submit-btn">
           Sign up
         </button>
         <p>
           <small>
+            {/* Link to login page */}
             Already have an account?<Link to="/login"> Login</Link>
           </small>
         </p>
